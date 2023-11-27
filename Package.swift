@@ -9,12 +9,14 @@ let package = Package(
     dependencies: [
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.83.1"),
+        .package(url: "https://github.com/MacPaw/OpenAI.git", branch: "main"),
     ],
     targets: [
         .executableTarget(
             name: "App",
             dependencies: [
                 .product(name: "Vapor", package: "vapor"),
+                .product(name: "OpenAI", package: "OpenAI")
             ]
         ),
         .testTarget(name: "AppTests", dependencies: [
